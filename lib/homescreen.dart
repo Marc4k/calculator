@@ -1,3 +1,4 @@
+import 'package:calculator/widget/glass_box.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,6 +11,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Stack(
+        children: [
+          GlassBox(
+              theChild: SafeArea(
+            child: Column(
+              children: [],
+            ),
+          )),
+        ],
+      ),
+    );
   }
 }
