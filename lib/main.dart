@@ -1,5 +1,6 @@
 import 'package:calculator/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      showSemanticsDebugger: false,
-      home: Home(),
+    return ScreenUtilInit(
+      designSize: const Size(413, 737),
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Home(),
+        );
+      },
     );
   }
 }
